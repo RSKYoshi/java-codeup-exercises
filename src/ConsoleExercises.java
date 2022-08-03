@@ -1,5 +1,6 @@
 import java.text.DecimalFormat;
 import java.util.Scanner;
+import static java.lang.Integer.parseInt;
 
 
 public class ConsoleExercises {
@@ -29,7 +30,8 @@ public class ConsoleExercises {
                     //new exercise
 
         Scanner scanner = new Scanner(System.in);
-        scanner.useDelimiter("\n");
+        //what does this delimiter do???????????
+//        scanner.useDelimiter("\n");
         System.out.print("Please enter an integer: ");
         int userInput = scanner.nextInt();
         System.out.println("You entered: --> \"" + userInput + "\" <--");
@@ -41,12 +43,12 @@ public class ConsoleExercises {
         String userInput2 = scanner.nextLine();
         scanner.nextLine();
         String userInput3 = scanner.nextLine();
-        System.out.printf("%s%n%s%n%s%n", userInput1, userInput2, userInput3);
+        System.out.printf("Word 1: %s%n Word 2: %s%n Word 3: %s%n", userInput1, userInput2, userInput3);
                 //new exercise
         scanner.nextLine();
         System.out.println("Please enter a sentence");
         String sentence = scanner.nextLine();
-        System.out.println(sentence);
+        System.out.printf("Your sentence is: '%s'", sentence);
 
                 //new exercise
         scanner.nextLine();
@@ -54,45 +56,54 @@ public class ConsoleExercises {
         scanner.useDelimiter("\n");
 
         System.out.println("Please enter length of classroom");
-                //below is for non-working parse method
-        //String length = scanner.nextLine();
-                //below is the working, non-parseInt method
-        int length = scanner.nextInt();
+                //below is for working parse method
+        String length = scanner.nextLine();
+        double L = Double.parseDouble(length);
+                //below is the working, non-parse method
+//        int length = scanner.nextInt();
 
         System.out.println("Please enter width of classroom");
-                 //below is for non-working parsInt method
-//        String width = scanner.nextLine();
-                //below is the working, non-parseInt method
-        int width = scanner.nextInt();
+                 //below is for working parse method
+
+        String width = scanner.nextLine();
+        double W = Double.parseDouble(width);
+                //below is the working, non-parse method
+//        int width = scanner.nextInt();
 
                         //PERIMETER
-            //below is the non-working ParseInt method
-        //int Perimeter = (Integer.parseInt(length) * 2) + (Integer.parseInt(width) * 2);
-        //System.out.println("The perimeter is: " + Perimeter);
+            //below is the working Parse method
+//        int Perimeter = ((Integer.parseInt(String.valueOf(length))) * 2) + (Integer.parseInt(String.valueOf(width)) * 2);
+        double Perimeter = (L*2 + W*2);
 
-        //below is the working non-ParseInt method
-        int Perimeter = (length * 2) + (width * 2);
-        System.out.printf("The perimeter is: %s", Perimeter);
+        System.out.println("The perimeter is: " + Perimeter);
+
+        //below is the working ParseInt method
+//        int Perimeter = (length * 2) + (width * 2);
+//        System.out.printf("The perimeter is: %s", Perimeter);
 
         // below is basically a br tag, use here for non-parse method
-        System.out.printf("%n");
+//        System.out.printf("%n");
 
                         //AREA//
 
         //below is the non-working parseInt method
-//        int Area = Integer.parseInt(length) * Integer.parseInt(width);
-//        System.out.println("The area is: " + Area);
+//        int Area = parseInt(String.valueOf(length)) * parseInt(String.valueOf(width));
+        double Area = (L*W);
+
+        System.out.println("The area is: " + Area);
 
         //working non-parseInt method
-        int Area = length * width;
-        System.out.printf("The area is: %s", Area);
+//        int Area = length * width;
+//        System.out.printf("The area is: %s", Area);
                     //VOLUME
 
         System.out.printf("%n");
-        System.out.println("Please enter room height");
-        int height = scanner.nextInt();
-        int Volume = width * length * height;
-        System.out.printf("The volume of the room is: %s", Volume);
+        System.out.printf("%n");
 
+        System.out.println("Please enter room height");
+        String height = scanner.nextLine();
+        double H = Double.parseDouble(height);
+        double Volume = (L * W * H);
+        System.out.printf("The volume of the room is: %s", Volume);
     }
 }
