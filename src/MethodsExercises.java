@@ -50,26 +50,29 @@ public class MethodsExercises {
         double total = x + y;
         System.out.printf("The sum is: %s", total);
         }
+
     // subtract
     public static void subtraction(double x, double y) {
         double total = x - y;
         System.out.printf("The difference is: %s", total);
     }
+
     // multiply
     public static void multiplication(double x, double y) {
         double total = x * y;
         System.out.printf("The product is: %s", total);
     }
+
     // divide
     public static void division(double x, double y) {
-
         if ( x==0 || y == 0) {
-            System.out.println("The quotient is: 0");
+            System.out.println("0 may not be used in division");
         } else {
             double total = x / y;
             System.out.printf("The quotient is: %s", total);
         }
     }
+
     // modulus
     public static void modulus(double x, double y) {
         double total = x % y;
