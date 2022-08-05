@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 public class MethodsExercises {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -8,7 +9,7 @@ public class MethodsExercises {
         double addDX = Double.parseDouble(addX);
         String addY = sc.next();
         double addDY = Double.parseDouble(addY);
-           addition(addDX, addDY);
+        addition(addDX, addDY);
 
         sc.nextLine();
         System.out.printf("%n%nSubtraction: Enter number to subtract from first, then enter next number to subtract from first number:%n");
@@ -16,7 +17,7 @@ public class MethodsExercises {
         double subDX = Double.parseDouble(subX);
         String subY = sc.next();
         double subDY = Double.parseDouble(subY);
-            subtraction(subDX, subDY);
+        subtraction(subDX, subDY);
 
         sc.nextLine();
         System.out.printf("%n%nMultiplication:%n");
@@ -24,7 +25,9 @@ public class MethodsExercises {
         double mulDX = Double.parseDouble(mulX);
         String mulY = sc.next();
         double mulDY = Double.parseDouble(mulY);
-            multiplication(mulDX, mulDY);
+        System.out.println("The product is: " + multiplication(mulDX, mulDY));
+//        uncomment below for non-recursive method
+//            multiplication(mulDX, mulDY);
 
         sc.nextLine();
         System.out.printf("%n%nDivision:%n");
@@ -34,22 +37,27 @@ public class MethodsExercises {
         double divDX = Double.parseDouble(divX);
         String divY = sc.next();
         double divDY = Double.parseDouble(divY);
-            division(divDX, divDY);
+        division(divDX, divDY);
 
         sc.nextLine();
         System.out.printf("%n%nModulus:%n");
-        String modX =  sc.next();
+        String modX = sc.next();
         double modDX = Double.parseDouble(modX);
-        String modY =  sc.next();
+        String modY = sc.next();
         double modDY = Double.parseDouble(modY);
-            modulus(modDX,modDY);
+        modulus(modDX, modDY);
+
+        sc.nextLine();
+        System.out.printf("%n%nPlease enter integer:%n");
+        int userInput = Integer.parseInt(sc.next());
+        getInteger(userInput);
     }
 
     // addition
     public static void addition(double x, double y) {
         double total = x + y;
         System.out.printf("The sum is: %s", total);
-        }
+    }
 
     // subtract
     public static void subtraction(double x, double y) {
@@ -58,14 +66,28 @@ public class MethodsExercises {
     }
 
     // multiply
-    public static void multiplication(double x, double y) {
-        double total = x * y;
-        System.out.printf("The product is: %s", total);
+//    public static void multiplication(double x, double y) {
+//        double total = x * y;
+    //loop-method here:
+//        double total = 0;
+//        for(double i=0;i<y;i++){
+//            total+=x;
+//        }
+//        System.out.printf("The product is: %s", total);
+//    }
+    //---------------------------
+    //multiply recursive method here:
+    public static double multiplication(double x, double y) {
+        if (x == 0 || y == 0) {
+            return 0;
+        } else
+            return (x + multiplication(x, y - 1));
     }
 
+    //-------------------
     // divide
     public static void division(double x, double y) {
-        if ( x==0 || y == 0) {
+        if (x == 0 || y == 0) {
             System.out.println("0 may not be used in division");
         } else {
             double total = x / y;
@@ -78,4 +100,18 @@ public class MethodsExercises {
         double total = x % y;
         System.out.printf("The equivalence is: %s", total);
     }
+
+    public static int getInteger(int x) {
+        if (x > 100 || x == 0) {
+            System.out.println("Please enter an integer within range: ");
+            Scanner sc = new Scanner(System.in);
+            int userInput = Integer.parseInt(sc.next());
+            return getInteger(userInput);
+            } else System.out.printf("Integer, ranged 1-100: %s", x);
+        return x;
+    }
 }
+
+
+
+
