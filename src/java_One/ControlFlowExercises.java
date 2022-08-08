@@ -1,3 +1,5 @@
+package java_One;
+
 import java.util.Scanner;
 
 import static java.lang.Math.pow;
@@ -37,6 +39,7 @@ public class ControlFlowExercises {
 //            } while (i<1000000);
             //#1c
             //refactoring #1a:
+            System.out.printf("%n");
             for (int i = 5; i <= 15; i++) {
                 System.out.println("i is " + i);
             }

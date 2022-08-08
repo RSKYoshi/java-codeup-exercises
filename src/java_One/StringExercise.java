@@ -1,3 +1,5 @@
+package java_One;
+
 public class StringExercise {
     public static void main(String[] args) {
         String pF = "We don't need no education\n" +

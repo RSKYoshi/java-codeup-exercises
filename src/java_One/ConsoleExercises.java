@@ -1,3 +1,5 @@
+package java_One;
+
 import java.text.DecimalFormat;
 import java.util.Scanner;
 import static java.lang.Integer.parseInt;
