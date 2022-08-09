@@ -1,6 +1,4 @@
 package java_Two;
-
-
 import java.util.Scanner;
 
 public class Person {

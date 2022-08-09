@@ -5,11 +5,10 @@ import java.util.Scanner;
 
 public class Bob {
     public static void main(String[] args) {
-        boolean keepTalking;
+        boolean userEnteredStop;
         Scanner sc = new Scanner(System.in);
         do {
-            System.out.printf("%nAsk me a question:");
-
+            System.out.printf("%nI'm Bob, ask me a question:");
             sc.useDelimiter("\n");
             String userInput = sc.next();
             if(userInput.contains("?")){
@@ -21,8 +20,9 @@ public class Bob {
             } else if(userInput.contains("stop")){
                 break;
             } else System.out.print("Bob: Whatever");
+
             String userEnter = sc.next();
-            keepTalking = userEnter.equals("stop");
-        }while(!keepTalking);
+            userEnteredStop = userEnter.equals("stop");
+        }while(!userEnteredStop);
     }
 }
