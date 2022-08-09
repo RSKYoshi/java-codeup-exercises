@@ -89,12 +89,18 @@ public class Input {
         return resultR;
     }
     //-------getDouble-------//
+    //change radius back to 'double' once bonus is achieved
     public double getDouble(){
-        System.out.println("Enter Double: ");
+        System.out.println("Enter Radius: ");
         double userDouble = sc.nextDouble();
-        System.out.print("Your double is: ");
+//        System.out.print("Your Radius is: ");
         return userDouble;
     }
+
+
+
+
+
 
 
     }
