@@ -4,21 +4,20 @@ import java_Two.Person;
 
 public class ServerNameGenerator {
     public static void main(String[] args) {
-        String[] adjectives = {"cool", "hot","room-temp", "delicious", "fast", "slow","mediocre","smart","athletic","intuitive"};
-        String[] nouns = {"Pacific Ocean", "Mount Rushmore", "Honolulu", "Washington", "Ryan", "Waimea-bay", "surfboard", "ball", "car", "San-Antonio"};
+        String[] adjectives = {"cool", "hot","room temp", "delicious", "fast", "slow","mediocre","smart","athletic","intuitive","delicious"};
+        String[] nouns = {"Pacific Ocean", "Mount Rushmore" , "Spam", "Honolulu", "Washington", "Ryan", "Waimea bay", "surfboard", "ball", "car", "San Antonio"};
 
         //select random noun and adjective here, hyphenate and display name
 
-        String randomAdjective = returnRandom(adjectives);
-        String randomNoun = returnRandom(nouns);
+        String randomAdjective = returnRandomString(adjectives);
+        String randomNoun = returnRandomString(nouns);
         String randomName = randomAdjective + "-" + randomNoun;
         System.out.printf("Here is your server name: %n%s", randomName);
 
     }
 
-    public static String returnRandom(String []x) {
-        String random = x[(int) (Math.random() * x.length)];
-        return random;
+    public static String returnRandomString(String []x) {
+        return x[(int) (Math.random() * x.length)];
     }
 
 

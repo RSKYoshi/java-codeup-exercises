@@ -76,9 +76,9 @@ public class Input {
 
     //-------getInt-------//
     public int getInt(){
-        System.out.println("Enter Int: ");
+//        System.out.println("Enter Int: ");
         int userInt= sc.nextInt();
-        System.out.print("Your int is: ");
+//        System.out.print("Your int is: ");
         return userInt;
     }
     //-------getDoubleRange-------//
@@ -111,11 +111,14 @@ public class Input {
     }
 
 
-
-
-
-
-
-    }
+//    public int getInt() {
+//        Scanner sc = new Scanner(System.in);
+//        int userIntSelected = sc.nextInt();
+//        if(userIntSelected>5||userIntSelected<0){
+//            System.out.println("Please enter a selection 1-5");
+//        }
+//        return userIntSelected;
+//    }
+}
 
 //}
