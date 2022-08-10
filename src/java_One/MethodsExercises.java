@@ -211,7 +211,7 @@ public class MethodsExercises {
 
 
 
-
+    //Exercise #4 Dice Roll
 
     public static void rollDice(int sides) {
         Scanner sc = new Scanner(System.in);
@@ -235,6 +235,9 @@ public class MethodsExercises {
             } else break;
         } System.out.println("goodbye");
     }
+
+    //Exercise #5 Game Development 101
+
 }
 
 

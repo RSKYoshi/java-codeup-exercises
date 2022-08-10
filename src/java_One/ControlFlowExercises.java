@@ -133,6 +133,8 @@ public class ControlFlowExercises {
                 String userInput4 = sc.next();
                 confirmation4 = userInput4.equals("y");
             }while(confirmation4);
+
+
         } else System.out.println("Goodbye");
     }
 }

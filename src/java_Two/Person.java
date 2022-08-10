@@ -2,6 +2,11 @@ package java_Two;
 import java.util.Scanner;
 
 public class Person {
+    @Override
+    public String toString() {
+        return name;
+    }
+
     private String name;
 
     public Person(String name) {

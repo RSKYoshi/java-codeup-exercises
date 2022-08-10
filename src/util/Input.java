@@ -34,33 +34,46 @@ public class Input {
         System.out.printf("%nYes or No?");
         String input = sc.next();
 
-        if(input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes")){
-            return true;
-        }
-            return false;
-        }
-        //-------getIntRange-------//
-    public int getIntRange(){
-        //        sc.nextLine();
-        System.out.printf("%nEnter int: ");
-        boolean intRange;
-        int result;
-        do{
-            int userInt = sc.nextInt();
-            result = userInt;
-            if(userInt>10||userInt==0){
-                System.out.printf("%nEnter int within 1-10 range: ");
-            } else {
-                System.out.printf("%nYour int is: ");
-            }
-//            String userInt2 = sc.next();
-            //below: intRange = 1-10
-            //if intRange is outside 1-10, keep prompting for input
-            //if input is correct, output that and move on
-            intRange = (userInt>10||userInt==0);
-        }while(intRange);
-        return result;
+        return input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes");
     }
+        //-------getIntRange-------//
+//    public int getIntRange(){
+//        //        sc.nextLine();
+//        System.out.printf("%nEnter int: ");
+//        boolean intRange;
+//        int result;
+//        do{
+//            int userInt = sc.nextInt();
+//            result = userInt;
+//            if(userInt>10||userInt==0){
+//                System.out.printf("%nEnter int within 1-10 range: ");
+//            } else {
+//                System.out.printf("%nYour int is: ");
+//            }
+////            String userInt2 = sc.next();
+//            //below: intRange = 1-10
+//            //if intRange is outside 1-10, keep prompting for input
+//            //if input is correct, output that and move on
+//            intRange = (userInt>10||userInt==0);
+//        }while(intRange);
+//        return result;
+//    }
+
+
+    public int getIntRange(){
+        System.out.printf("%nEnter int: ");
+        int userInt = sc.nextInt();
+        if(userInt>10||userInt==0){
+            System.out.printf("%nEnter int within 1-10 range: ");
+            getIntRange();
+        } else {
+            System.out.printf("%nYour int is: ");
+        }
+        return userInt;
+    }
+
+
+
     //-------getInt-------//
     public int getInt(){
         System.out.println("Enter Int: ");
