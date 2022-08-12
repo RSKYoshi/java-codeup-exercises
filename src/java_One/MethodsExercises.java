@@ -1,5 +1,4 @@
 package java_One;
-
 import java.util.Scanner;
 import java.lang.Math;
 
@@ -55,7 +54,7 @@ public class MethodsExercises {
         sc.nextLine();
         System.out.printf("%n%nPlease enter integer:%n");
         long userInputFactorial = Long.parseLong(sc.next());
-        getFactorial(userInputFactorial);
+        System.out.println(getFactorial(userInputFactorial));
 
         sc.nextLine();
         System.out.printf("%n%nPlease enter side for dice:%n");
@@ -142,108 +141,56 @@ public class MethodsExercises {
 
     public static long getFactorial(long x) {
         System.out.printf("Your number is %s%n", x);
-        if(x > 10 || x == 0){
-            System.out.println("Please enter an integer within range: ");
-            Scanner sc = new Scanner(System.in);
-            long newUserInt = sc.nextLong();
-            getFactorial(newUserInt);
-        }
-        //output factorial of x, which is the user input, here:
-        long userInp = x;
-        long factorial = 1;
-        for (long i = 1; i <= userInp; i++) {
-//            System.out.println();
-//            factorial += factorial * i;
-            factorial *= i;
-//            return x*getFactorial(x-1);
-        }
-        System.out.printf("%s!" +" "+ "=" + " " + factorial, x,x);
-
-
-
-
-//        System.out.println(factorial);
-//        return factorial;
-
-//        System.out.printf("Do you want to continue? [y/n]%n");
-//        String continueResponse = sc.next();
-//        if(continueResponse.equals("y")){
-//            getFactorial(x);
-//            System.out.println("Please enter an integer within range: ");
-////            Scanner sc = new Scanner(System.in);
-//            sc.nextLine();
-//            long userInputFactorial = sc.nextLong();
-//            return getFactorial(userInputFactorial);
-//        }
-
-
-//        String userInputF = sc.next();
-//        if (userInputF.equals("y")) {
-////            getFactorial(userInputFactorial);
-//        }
-//        getInteger();
-//        System.out.println("Enter");
-//        Scanner sc = new Scanner(System.in);
-//        String userYN = sc.nextLine();
-//        boolean promptResponse;
-//        promptResponse = userYN.equals("y");
-//        if(promptResponse){
-//        if (x > 10 || x == 0) {
-//            System.out.println("Please enter an integer within range: ");
-//            Scanner sc = new Scanner(System.in);
-//            sc.nextLine();
-//            long userInputFactorial = sc.nextLong();
-//            return getFactorial(userInputFactorial);
-//        }
-//
-//
-//            long builtFactorial = 1;
-//            for (int i = 1; i < x; i++) {
-//                System.out.printf("%s!" + "is" + getFactorial(x), x);
-//                builtFactorial += builtFactorial * i;
-//                System.out.println(x*getFactorial(x-1));
-//                here for sout continue
-//                continue up to 1000
-//                    System.out.printf("Do you want to continue to 1000? [y/n]%n");
-//            }
-//            return builtFactorial;
-//            return getFactorial(x);
-//            System.out.printf("%s! = %s",x,getFactorial(x));
-//        }
-//
-//        System.out.println("Continue? [y/n]");
-//        return;
-//        System.out.println("Continue? [y/n]");
-//        String userYN2 = sc.nextLine();
-//        do {
-//        promptResponse = userYN2.equals("y");
-//            sc.nextLine();
-//            Scanner sc = new Scanner(System.in);
-//            if(promptResponse){
-//                return getFactorial(x);
-//            }
-//            if (x > 10 || x == 0) {
-//                System.out.println("Please enter an integer within range: ");
-//                userInputFactorial = where user input is stored
-//                long userInputFactorial = sc.nextLong();
-//                return getFactorial(userInputFactorial);
-                //put an x before each new var
-//            } else {
-//            System.out.printf("%s!" + "is" + getFactorial(x), x,x);
-//                long builtFactorial = 1;
-//                for (int i = 1; i < x; i++) {
-//                System.out.printf("%s!" + "is" + getFactorial(x), x,x);
-//                    builtFactorial += builtFactorial * i;
+        System.out.println("Show factorial using your integer? [y/n]");
+        Scanner sc = new Scanner(System.in);
+        String continue1 = sc.next();
+        //if user types yes, continue....else move on to next method
+        if(continue1.equals("y")||continue1.equals("yes")){
+            //evaluate if user int is within range. If it is, continue to print out factorial once before asking to continue again. If input is not within range, keep prompting to enter an integer within range until it is within range.
+            if (x > 10 || x == 0) {
+                System.out.println("Please enter an integer within range: ");
+                sc = new Scanner(System.in);
+                long newUserInt = sc.nextLong();
+                getFactorial(newUserInt);
+            }
+            //output factorial of x, which is the user input, here:
+            //this works to output the factorial
+            long userInp = x;
+            long factorial = 1;
+            for (long i = 1; i <= userInp; i++) {
+                factorial *= i;
+            }
+            //print out factorial line thing
+            int factorialVisual = 1;
+            //add sout here to add things before fluffy line
+            System.out.printf("%s!: ",x);
+            for (long i = 1;i<=userInp;i++) {
+//                factorialVisual += factorialVisual * userInp;
 //                return x*getFactorial(x-1);
-//                }
-//                return builtFactorial;
-                // "!x = x" +"is" +getFactorial(x);
-//            }
-//        } while (promptResponse);
-        return x;
+                if(i==x){
+                    System.out.print(factorialVisual + "=");
+                }else {
+                    System.out.print(factorialVisual + "x");
+                } factorialVisual+=1;
+            } System.out.println(factorial);
+
+            //Print out factorial here
+//            System.out.printf("%s!" + " " + "=" + " " + factorial, x, x);
+            //TODO: after printing factorial, prompt user to continue. If yes, use recursion to call the getFactorial method and start over. If no, exit and move on.
+            System.out.println("Continue entering factorial? [y/n]");
+            sc = new Scanner(System.in);
+            String continue2 = sc.next();
+            if(continue2.equals("y")||continue2.equals("yes")){
+                System.out.println("Please enter int: ");
+                int newInput = Integer.parseInt(sc.next());
+                getFactorial(newInput);
+            }
+        }
+        //need to find a way so that the if/else can exit AND not output 0; as is, it works, but 0 is output.
+        return 0;
     }
 
-
+//TODO: Refactor getFactorial to use do while loop, to avoid using the return 0 at the end to break out of if/else;
         //Exercise #4 Dice Roll
 
         public static void rollDice ( int sides){
@@ -271,6 +218,22 @@ public class MethodsExercises {
         }
 
         //Exercise #5 Game Development 101
+
+//    You are going to build a high-low guessing game. Create a class named HighLow inside of src.
+//
+//    The specs for the game are:
+//
+//    Game picks a random number between 1 and 100.
+//    Prompts user to guess the number.
+//    All user inputs are validated.
+//    If user's guess is less than the number, it outputs "HIGHER".
+//    If user's guess is more than the number, it outputs "LOWER".
+//    If a user guesses the number, the game should declare "GOOD GUESS!"
+//    Hints
+//
+//    Use the random method of the java.lang.Math class to generate a random number.
+
+
 
     }
 
