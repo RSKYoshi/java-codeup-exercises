@@ -6,16 +6,15 @@ public class Student {
     private String name;
     private ArrayList<Integer> grades;
 
-    //constructor here to set name ang grades property
-    public Student(String name, int grades) {
-        this.name = name;
-        this.grades = new ArrayList<Integer>();
+    @Override
+    public String toString() {
+        return name + grades;
     }
 
-    //array list of integers here
-    public ArrayList <Integer> grades(){
-        return new ArrayList<Integer>();
-        //add grade here?
+    //constructor here to set name and grades property
+    public Student(String name) {
+        this.name = name;
+        this.grades = new ArrayList<>();
     }
 
     // returns the student's name
@@ -31,11 +30,12 @@ public class Student {
     // returns the average of the students grades
     public double getGradeAverage() {
         //loop here and get average
+        int gradesSum = 0;
         int average = 0;
         for (int i = 0; i < grades.size(); i++) {
-            int gradesSum = 0;
+            int totalQuantity= grades.size();
             gradesSum += grades.get(i);
-            average = gradesSum / grades.size();
+            average = gradesSum / totalQuantity;
         }
         return average;
     }
