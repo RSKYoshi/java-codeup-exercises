@@ -54,7 +54,7 @@ public class GradesApplication {
             System.out.printf("%nStudent's Github usernames: ");
 //        print out usernames here
             for(String key:students.keySet()){
-                System.out.printf("|%s|"+" ", key);
+                System.out.printf("|%s|" + " ", key);
             }
         System.out.printf("%nSelect Github username: ");
 //        Scanner sc = new Scanner(System.in);

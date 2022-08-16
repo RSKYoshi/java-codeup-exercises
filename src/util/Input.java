@@ -19,24 +19,25 @@ import java.util.Scanner;
 
 public class Input {
     private Scanner sc = new Scanner(System.in);
+
     public String getString() {
 //        Scanner sc = new Scanner(System.in);
 //        System.out.printf("%nInput here: ");
         //this clears scanner
 //        sc.nextLine();
         //listen for user input
-        String input = sc.next();
-//        System.out.printf("Your input: %s" ,input);
-        return input;
+        //        System.out.printf("Your input: %s" ,input);
+        return sc.next();
     }
+
     //-------yesNo-------//
     public boolean yesNo() {
         System.out.printf("%n[y/N]: ");
         String input = sc.next();
 
-        return input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes");
+        return input.equalsIgnoreCase("y") || input.equalsIgnoreCase("ye") || input.equalsIgnoreCase("yes");
     }
-        //-------getIntRange-------//
+    //-------getIntRange-------//
 //    public int getIntRange(){
 //        //        sc.nextLine();
 //        System.out.printf("%nEnter int: ");
@@ -60,65 +61,40 @@ public class Input {
 //    }
 
 
-    public int getIntRange(){
-        System.out.printf("%nEnter int: ");
+    public int getIntRange(int min, int max) {
+//        System.out.printf("%nEnter int: ");
+//        System.out.println("Enter Int: ");
         int userInt = sc.nextInt();
-        if(userInt>10||userInt==0){
-            System.out.printf("%nEnter int within 1-10 range: ");
-            getIntRange();
-        } else {
-            System.out.printf("%nYour int is: ");
+        if (userInt < min || userInt > max) {
+//            System.out.println("Enter an integer within 1-1000");
+            System.out.printf("%s is not a valid selection: Enter number within range: "+"%n", userInt);
+            return getIntRange(min,max);
+
         }
         return userInt;
+//        System.out.print("Your int is: ");
     }
-
 
 
     //-------getInt-------//
-    public int getInt(){
-//        System.out.println("Enter Int: ");
-        int userInt= sc.nextInt();
-//        System.out.print("Your int is: ");
-        return userInt;
+    public int getInt() {
+        return sc.nextInt();
     }
+
     //-------getDoubleRange-------//
-    public double getDoubleRange(){
+    public double getDoubleRange(double min, double max) {
         System.out.printf("%nEnter double: ");
-        boolean doubleRange;
-        double resultR;
-        do{
-            double userDoubleR = sc.nextDouble();
-            resultR = userDoubleR;
-            if(userDoubleR>10||userDoubleR==0){
-                System.out.printf("%nEnter double within 1-10 range: ");
-            } else {
-                System.out.printf("%nYour double is: ");
-            }
-            //below: intRange = 1-10
-            //if intRange is outside 1-10, keep prompting for input
-            //if input is correct, output that and move on
-            doubleRange = (userDoubleR>10||userDoubleR==0);
-        }while(doubleRange);
-        return resultR;
+        double userDoubleR = sc.nextDouble();
+        if (userDoubleR > max || userDoubleR < min) {
+            System.out.printf("%nEnter double within range: ");
+        }
+        return userDoubleR;
     }
-    //-------getDouble-------//
-    //change radius back to 'double' once bonus is achieved
-    public double getDouble(){
-        System.out.println("Enter Radius: ");
-        double userDouble = sc.nextDouble();
-//        System.out.print("Your Radius is: ");
-        return userDouble;
-    }
+        //-------getDouble-------//
+        //change radius back to 'double' once bonus is achieved
+    public double getDouble () {
+        return sc.nextDouble();
+    }}
 
 
-//    public int getInt() {
-//        Scanner sc = new Scanner(System.in);
-//        int userIntSelected = sc.nextInt();
-//        if(userIntSelected>5||userIntSelected<0){
-//            System.out.println("Please enter a selection 1-5");
-//        }
-//        return userIntSelected;
-//    }
-}
 
-//}
