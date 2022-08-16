@@ -21,17 +21,17 @@ public class Input {
     private Scanner sc = new Scanner(System.in);
     public String getString() {
 //        Scanner sc = new Scanner(System.in);
-        System.out.printf("%nInput here: ");
+//        System.out.printf("%nInput here: ");
         //this clears scanner
 //        sc.nextLine();
         //listen for user input
         String input = sc.next();
-        System.out.printf("Your input: %s" ,input);
-        return "";
+//        System.out.printf("Your input: %s" ,input);
+        return input;
     }
     //-------yesNo-------//
     public boolean yesNo() {
-        System.out.printf("%nYes or No?");
+        System.out.printf("%n[y/N]: ");
         String input = sc.next();
 
         return input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes");

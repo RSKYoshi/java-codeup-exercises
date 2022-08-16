@@ -1,10 +1,11 @@
 package grades;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Student {
     private String name;
-    private ArrayList<Integer> grades;
+    public ArrayList<Integer> grades;
 
     @Override
     public String toString() {
@@ -30,14 +31,14 @@ public class Student {
     // returns the average of the students grades
     public double getGradeAverage() {
         //loop here and get average
-        int gradesSum = 0;
-        int average = 0;
-        for (int i = 0; i < grades.size(); i++) {
-            int totalQuantity= grades.size();
-            gradesSum += grades.get(i);
+        double gradesSum = 0;
+        double average = 0;
+        for (double i = 0; i < grades.size(); i++) {
+            double totalQuantity = grades.size();
+            gradesSum += grades.get((int) i);
             average = gradesSum / totalQuantity;
         }
         return average;
     }
-
 }
+
