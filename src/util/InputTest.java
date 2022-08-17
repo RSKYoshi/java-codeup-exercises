@@ -13,18 +13,19 @@ public class InputTest {
         //        method: boolean yesNo()
         System.out.println("True or false? ");
         System.out.println(userInput.yesNo());
-        //method: int getInt(int min, int max)
-        System.out.println("Enter num 1-10");
-        System.out.println(userInput.getIntRange(1,10));
         //        int getInt()
         System.out.println("Enter Int");
         System.out.println(userInput.getInt());
-        //        double getDouble(double min, double max)
-        System.out.println("Enter double 1-10");
-        System.out.println(userInput.getDoubleRange(1,10));
+        //method: int getInt(int min, int max)
+        System.out.println("Enter num 1-10");
+        System.out.println(userInput.getIntRange(1,10));
         //        double getDouble()
         System.out.println("Enter double");
         System.out.println(userInput.getDouble());
+        //        double getDouble(double min, double max)
+        System.out.println("Enter double 1-10");
+        System.out.println(userInput.getDoubleRange(1,10));
+
 
     }
 }

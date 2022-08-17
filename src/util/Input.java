@@ -1,6 +1,7 @@
 package util;
 import java.util.Scanner;
 
+//import static jdk.internal.org.jline.utils.Colors.s;
 
 
 //Create a package inside of src named util. Inside of util, create a class named Input that has a private field named scanner. When an instance of this object is created, the scanner field should be set to a new instance of the Scanner class. The class should have the following methods, all of which return command line input from the user:
@@ -78,7 +79,15 @@ public class Input {
 
     //-------getInt-------//
     public int getInt() {
-        return sc.nextInt();
+//        return sc.nextInt();
+        //uncomment above line for method to work without using below: try-catch
+        try {
+            return Integer.valueOf(getString());
+        } catch (NumberFormatException e) {
+            System.out.println("Input was either a string or a double; Expected an integer");
+            System.out.println(e);
+        }
+        return getInt();
     }
 
     //-------getDoubleRange-------//
@@ -93,7 +102,16 @@ public class Input {
         //-------getDouble-------//
         //change radius back to 'double' once bonus is achieved
     public double getDouble () {
-        return sc.nextDouble();
+//        return sc.nextDouble();
+        //uncomment above line for method to work without using below try catch
+        try {
+            return Double.valueOf(getString());
+        } catch (NumberFormatException e) {
+            System.out.println("Input was a string; Expected a double");
+            System.out.println(e);
+        }
+        return getDouble();
+        ///use try catch here to catch string's & non-double's
     }}
 
 

@@ -16,28 +16,20 @@ public class GradesApplication {
         HashMap<String, Student> students = new HashMap<>();
         //create student object here
         Student Ryan = new Student("Ryan");
-        Ryan.addGrade(77);
-        Ryan.addGrade(50);
-        Ryan.addGrade(40);
+        Ryan.addGrade(77,50,40);
         //key, value
         students.put("slantyNinja", Ryan);
         //next student
         Student Bob = new Student("Bob");
-        Bob.addGrade(88);
-        Bob.addGrade((int) 50.4);
-        Bob.addGrade(30);
+        Bob.addGrade(88,30,50);
         students.put("coolBeans360", Bob);
         //next student
         Student Cody = new Student("Cody");
-        Cody.addGrade(85);
-        Cody.addGrade(99);
-        Cody.addGrade(40);
+        Cody.addGrade(85,99,40);
         students.put("bestestCodrEvr1990", Cody);
         //next student
         Student Codette = new Student("Codette");
-        Codette.addGrade(85);
-        Codette.addGrade(99);
-        Codette.addGrade(40);
+        Codette.addGrade(85,99,40);
         students.put("thyme2Code", Codette);
 
 //        String githubUsernames = String key:students.keySet();

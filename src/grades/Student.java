@@ -24,8 +24,13 @@ public class Student {
     }
 
     // adds the given grade to the grades property
-    public void addGrade(int grade) {
-        this.grades.add(grade);
+//    public void addGrade(int grade) {
+//        this.grades.add(grade);
+//    }
+    public void addGrade(int ...integers) {
+        for(int i : integers){
+            grades.add(i);
+        }
     }
 
     // returns the average of the students grades

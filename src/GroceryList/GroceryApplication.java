@@ -56,12 +56,11 @@ import java.util.Collections;
 //}
 
 //copy here
-import java.util.ArrayList;
-        import java.util.Collections;
+
 
 public class GroceryApplication {
     public static final int PRODUCE = 1;
-    public static final int MEATZ = 2;
+    public static final int MEATS = 2;
 
     private static Input input = new Input();
 
@@ -122,14 +121,14 @@ public class GroceryApplication {
     private static void printGroceryCategories() {
         System.out.println("Grocery Categories:");
         System.out.println("1. Produce");
-        System.out.println("2. Meatz");
+        System.out.println("2. Meats");
 
     }
 
     private static void printGroceryList(ArrayList<GroceryItem> groceries) {
         // 1. for each category
         printGroceryListByCategory(PRODUCE, groceries);
-        printGroceryListByCategory(MEATZ, groceries);
+        printGroceryListByCategory(MEATS, groceries);
     }
 
     private static void printGroceryListByCategory(int category, ArrayList<GroceryItem> groceries) {
@@ -150,7 +149,7 @@ public class GroceryApplication {
         if(category == PRODUCE) {
             System.out.println("PRODUCE:");
         } else {
-            System.out.println("MEATZ:");
+            System.out.println("MEATS:");
         }
         System.out.println(categoryItems);
     }
