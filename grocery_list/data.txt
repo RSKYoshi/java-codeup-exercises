@@ -1,0 +1,3 @@
+Oranges : 5
+Dos Equis : 24
+Wine : 1
