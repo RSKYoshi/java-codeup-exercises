@@ -1,4 +1,4 @@
-package Arrays;
+package arrays;
 import java_Two.Person;
 import java.util.Arrays;
 

@@ -17,8 +17,8 @@ public class InputTest {
         System.out.println("Enter Int");
         System.out.println(userInput.getInt());
         //method: int getInt(int min, int max)
-        System.out.println("Enter num 1-10");
-        System.out.println(userInput.getIntRange(1,10));
+//        System.out.println("Enter num 1-10");
+        System.out.println(userInput.getIntRange(1,10,"Enter num 1-10"));
         //        double getDouble()
         System.out.println("Enter double");
         System.out.println(userInput.getDouble());

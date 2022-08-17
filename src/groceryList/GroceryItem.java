@@ -1,4 +1,4 @@
-package GroceryList;
+package groceryList;
 //package java_two.collections_exercise;
 
 public class GroceryItem implements Comparable {

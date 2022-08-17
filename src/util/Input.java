@@ -62,14 +62,15 @@ public class Input {
 //    }
 
 
-    public int getIntRange(int min, int max) {
+    public int getIntRange(int min, int max, String prompt) {
+        System.out.println(prompt);
 //        System.out.printf("%nEnter int: ");
 //        System.out.println("Enter Int: ");
         int userInt = sc.nextInt();
         if (userInt < min || userInt > max) {
 //            System.out.println("Enter an integer within 1-1000");
             System.out.printf("%s is not a valid selection: Enter number within range: "+"%n", userInt);
-            return getIntRange(min,max);
+            return getIntRange(min,max, prompt);
 
         }
         return userInt;
@@ -81,23 +82,33 @@ public class Input {
     public int getInt() {
 //        return sc.nextInt();
         //uncomment above line for method to work without using below: try-catch
+        while(true){
+
         try {
             return Integer.valueOf(getString());
         } catch (NumberFormatException e) {
-            System.out.println("Input was either a string or a double; Expected an integer");
+            System.out.println("Input was either a string, double, or number entered exceeded 32 bits of memory(2,147,483,647): Expected an integer within range.");
             System.out.println(e);
+            System.out.println("Enter Int: ");
         }
         return getInt();
+    }
     }
 
     //-------getDoubleRange-------//
     public double getDoubleRange(double min, double max) {
-        System.out.printf("%nEnter double: ");
-        double userDoubleR = sc.nextDouble();
-        if (userDoubleR > max || userDoubleR < min) {
-            System.out.printf("%nEnter double within range: ");
+        try{
+            System.out.printf("%nEnter double: ");
+            double userDoubleR = sc.nextDouble();
+            if (userDoubleR > max || userDoubleR < min) {
+                System.out.printf("%nEnter double within range: ");
+            }
+            return userDoubleR;
+        } catch (NumberFormatException e) {
+            System.out.println("Input was a string; Expected a double");
+            System.out.println(e);
         }
-        return userDoubleR;
+        return getDoubleRange(min, max);
     }
         //-------getDouble-------//
         //change radius back to 'double' once bonus is achieved

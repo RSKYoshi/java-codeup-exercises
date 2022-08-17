@@ -1,4 +1,4 @@
-package GroceryList;
+package groceryList;
 import util.Input;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -93,8 +93,8 @@ public class GroceryApplication {
             printGroceryCategories();
 
 
-            System.out.println("Enter the number of the category: ");
-            int categoryNum = input.getIntRange(1,2);
+//            System.out.println("Enter the number of the category: ");
+            int categoryNum = input.getIntRange(1,2,"Enter the number of the category: " );
 
 
 
