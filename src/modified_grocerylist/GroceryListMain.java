@@ -11,7 +11,7 @@ public class GroceryListMain {
         GroceryItem naranjas = new GroceryItem("Oranges", 5);
         GroceryItem beer = new GroceryItem("Dos Equis", 24);
         GroceryItem tocino = new GroceryItem("Bacon", 10);
-        GroceryItem wine = new GroceryItem("Wine", 1);
+        GroceryItem wine = new GroceryItem("Wine", 12);
 
 
 
@@ -27,6 +27,13 @@ public class GroceryListMain {
         groceryList.removeGroceryItem("Bacon");
         groceryList.printItems();
 
+//        groceryList.setItemQuantity("Oranges" , 12);
+//        GroceryItem anItem = groceryList.getItemByName("Oranges");
+//        GroceryItem anItem =
+//
+//        groceryList.writeToFile(groceryList);
+//
+//        GroceryList2 = groceryListGateway.
         groceryList.saveToFile();
 
     }
