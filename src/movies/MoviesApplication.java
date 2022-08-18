@@ -19,7 +19,7 @@ public class MoviesApplication {
         while(choice != EXIT_CHOICE) {
             printMenu();
 
-            choice = input.getInt();
+            choice = input.getInt("Enter int: ");
 
             doChoice(choice);
         }

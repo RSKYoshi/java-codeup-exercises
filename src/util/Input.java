@@ -79,7 +79,8 @@ public class Input {
 
 
     //-------getInt-------//
-    public int getInt() {
+    public int getInt(String prompt) {
+        System.out.println(prompt);
 //        return sc.nextInt();
         //uncomment above line for method to work without using below: try-catch
         while(true){
@@ -89,9 +90,9 @@ public class Input {
         } catch (NumberFormatException e) {
             System.out.println("Input was either a string, double, or number entered exceeded 32 bits of memory(2,147,483,647): Expected an integer within range.");
             System.out.println(e);
-            System.out.println("Enter Int: ");
+//            System.out.println("Enter Int: ");
         }
-        return getInt();
+        return getInt(prompt);
     }
     }
 

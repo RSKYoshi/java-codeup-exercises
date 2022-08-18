@@ -101,8 +101,8 @@ public class GroceryApplication {
             System.out.print("Enter the name of the item: ");
             String itemName = input.getString();
 
-            System.out.println("Enter the quantity of the item: ");
-            int itemQty = input.getInt();
+//            System.out.println("Enter the quantity of the item: ");
+            int itemQty = input.getInt("Enter the quantity of the item: ");
 
             // now that we have the 3 pieces of info for item, make the item
             GroceryItem item = new GroceryItem(itemName, categoryNum, itemQty);
